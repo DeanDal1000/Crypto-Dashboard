@@ -52,8 +52,8 @@ const Post = ({ img, title }) => {
 
   return (
     <div>
-      {news.map((article) => (
-        <Card className={classes.card}>
+      {news.map((article, id) => (
+        <Card key={id} className={classes.card}>
           <CardActionArea>
             <CardMedia
               className={classes.media}

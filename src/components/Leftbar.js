@@ -4,21 +4,21 @@ import {
   List,
   ExitToApp,
   Home,
-  Person,
-  PhotoCamera,
   PlayCircleOutline,
   Settings,
   Storefront,
   TabletMac,
-  FeedIcon,
 } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
+import '../styles/Navbar.css';
+import AnalyticsIcon from '@mui/icons-material/Analytics';
+import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 
 const useStyles = makeStyles((theme) => ({
   container: {
     height: '100vh',
-    color: 'white',
+    color: '#fff',
     zIndex: '10000',
     paddingTop: theme.spacing(10),
     backgroundColor: theme.palette.primary.main,
@@ -26,14 +26,14 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     [theme.breakpoints.up('sm')]: {
       backgroundColor: 'white',
-      color: '#555',
+      color: 'black',
+      textDecoration: 'none',
       border: '1px solid #ece7e7',
     },
   },
   item: {
     display: 'flex',
     alignItems: 'center',
-    textDecoration: 'none',
     marginBottom: theme.spacing(4),
     [theme.breakpoints.up('sm')]: {
       marginBottom: theme.spacing(3),
@@ -49,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
   text: {
     fontWeight: 500,
+    textDecoration: 'none',
     [theme.breakpoints.down('sm')]: {
       display: 'none',
       textDecoration: 'none',
@@ -59,29 +60,29 @@ const useStyles = makeStyles((theme) => ({
 const Leftbar = () => {
   const classes = useStyles();
   return (
-    <Container className={classes.container}>
+    <Container className={classes.container} id="nav-container">
       <Navbar />
-      <Link to="/">
-        <div className={classes.item}>
+      <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <div className={classes.item} id="items">
           <Home className={classes.icon} />
           <Typography className={classes.text}>Dashboard</Typography>
         </div>
       </Link>
-      <Link to="/convert">
+      <Link to="/convert" style={{ textDecoration: 'none', color: 'inherit' }}>
         <div className={classes.item}>
-          <Person className={classes.icon} />
+          <CompareArrowsIcon className={classes.icon} />
           <Typography className={classes.text}>Crypto Convertor</Typography>
         </div>
       </Link>
-      <Link to="/feed">
+      <Link to="/feed" style={{ textDecoration: 'none', color: 'inherit' }}>
         <div className={classes.item}>
           <List className={classes.icon} />
           <Typography className={classes.text}>News</Typography>
         </div>
       </Link>
-      <Link to="/tracker">
+      <Link to="/tracker" style={{ textDecoration: 'none', color: 'inherit' }}>
         <div className={classes.item}>
-          <PhotoCamera className={classes.icon} />
+          <AnalyticsIcon className={classes.icon} />
           <Typography className={classes.text}>Tracker</Typography>
         </div>
       </Link>

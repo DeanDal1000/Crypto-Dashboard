@@ -1,15 +1,6 @@
-import {
-  alpha,
-  AppBar,
-  Avatar,
-  Badge,
-  InputBase,
-  makeStyles,
-  Toolbar,
-  Typography,
-} from '@material-ui/core';
-import { Cancel, Mail, Notifications, Search } from '@material-ui/icons';
+import { AppBar, makeStyles, Toolbar, Typography } from '@material-ui/core';
 import { useState } from 'react';
+import DashboardIcon from '@mui/icons-material/Dashboard';
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -49,7 +40,7 @@ const Navbar = () => {
           CRYPTO
         </Typography>
         <Typography variant="h6" className={classes.logoSm}>
-          C
+          <DashboardIcon />
         </Typography>
       </Toolbar>
     </AppBar>
