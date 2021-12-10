@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
   toolbar: {
     display: 'flex',
     justifyContent: 'space-between',
+    zIndex: '10000',
   },
   logoLg: {
     display: 'none',
@@ -45,10 +46,10 @@ const Navbar = () => {
     <AppBar position="fixed">
       <Toolbar className={classes.toolbar}>
         <Typography variant="h6" className={classes.logoLg}>
-          Material
+          CRYPTO
         </Typography>
         <Typography variant="h6" className={classes.logoSm}>
-          M
+          C
         </Typography>
       </Toolbar>
     </AppBar>

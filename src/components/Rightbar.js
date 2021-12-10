@@ -32,7 +32,7 @@ const Rightbar = () => {
   const classes = useStyles();
   return (
     <Container className={classes.container}>
-      <Typography className={classes.title} gutterBottom>
+      {/* <Typography className={classes.title} gutterBottom>
         Online Friends
       </Typography>
       <AvatarGroup max={6} style={{ marginBottom: 20 }}>
@@ -124,7 +124,7 @@ const Rightbar = () => {
       </Link>
       <Link href="#" className={classes.link} variant="body2">
         Life
-      </Link>
+      </Link> */}
     </Container>
   );
 };

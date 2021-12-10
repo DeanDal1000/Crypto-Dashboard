@@ -10,6 +10,7 @@ import {
   Settings,
   Storefront,
   TabletMac,
+  FeedIcon,
 } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
@@ -18,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     height: '100vh',
     color: 'white',
+    zIndex: '10000',
     paddingTop: theme.spacing(10),
     backgroundColor: theme.palette.primary.main,
     position: 'sticky',
@@ -49,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 500,
     [theme.breakpoints.down('sm')]: {
       display: 'none',
+      textDecoration: 'none',
     },
   },
 }));
@@ -76,10 +79,13 @@ const Leftbar = () => {
           <Typography className={classes.text}>News</Typography>
         </div>
       </Link>
-      <div className={classes.item}>
-        <PhotoCamera className={classes.icon} />
-        <Typography className={classes.text}>Camera</Typography>
-      </div>
+      <Link to="/tracker">
+        <div className={classes.item}>
+          <PhotoCamera className={classes.icon} />
+          <Typography className={classes.text}>Tracker</Typography>
+        </div>
+      </Link>
+
       <div className={classes.item}>
         <PlayCircleOutline className={classes.icon} />
         <Typography className={classes.text}>Videos</Typography>

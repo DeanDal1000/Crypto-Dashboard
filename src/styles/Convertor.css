@@ -9,3 +9,9 @@
   justify-content: center;
   text-align: center;
 }
+
+.table-input {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}

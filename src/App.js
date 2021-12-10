@@ -6,6 +6,7 @@ import Dashboard from './components/Dashboard';
 import Rightbar from './components/Rightbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Convertor from './components/Convertor';
+import Livetracker from './components/Livetracker';
 
 const useStyles = makeStyles((theme) => ({
   rightbar: {
@@ -17,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
+  console.log(process.env.REACT_APP_NEWS_API_KEY);
   return (
     <>
       <Router>
@@ -29,6 +31,7 @@ function App() {
               <Route path="/" element={<Dashboard />} />
               <Route path="/convert" element={<Convertor />} />
               <Route path="/feed" element={<Feed />} />
+              <Route path="/tracker" element={<Livetracker />} />
             </Routes>
           </Grid>
           <Grid item sm={3} className={classes.right}>
