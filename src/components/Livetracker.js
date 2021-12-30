@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Container, makeStyles } from '@material-ui/core';
+import Coin from './Coin';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -11,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
 const Livetracker = () => {
   const classes = useStyles();
   const [coins, setCoins] = useState([]);
+  const [search, setSearch] = useState('');
   useEffect(() => {
     axios
       .get(
@@ -22,13 +24,42 @@ const Livetracker = () => {
       .catch((error) => console.log('error'));
   }, []);
 
+  const handleChnage = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const filteredCoins = coins.filter((coin) =>
+    coin.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <Container className={classes.container}>
-      <div className="coin-search">
-        <h1>Live Tracker</h1>
-        <form>
-          <input type="text" placeholder="Search" className="coin-input" />
-        </form>
+      <div className="coin-app">
+        <div className="coin-search">
+          <h1>Live Tracker</h1>
+          <form>
+            <input
+              type="text"
+              placeholder="Search"
+              onChange={handleChnage}
+              className="coin-input"
+            />
+          </form>
+        </div>
+        {filteredCoins.map((coin) => {
+          return (
+            <Coin
+              key={coin.id}
+              name={coin.name}
+              image={coin.image}
+              symbol={coin.symbol}
+              marketcap={coin.market_cap}
+              price={coin.current_price}
+              priceChange={coin.price_change_percentage_24h}
+              volume={coin.total_volume}
+            />
+          );
+        })}
       </div>
     </Container>
   );
